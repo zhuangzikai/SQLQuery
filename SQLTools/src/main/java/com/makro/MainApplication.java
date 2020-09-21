@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import com.makro.config.BootApplication;
 /**
  * SpringBoot启动类
- * @author Thierry.Zhuang
+ * @author Thierry.Zhuang 
  * 
  */
 public class MainApplication {
