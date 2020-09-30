@@ -2,7 +2,7 @@ package com.makro.bean;
 
 public class User {
 	private int id;
-	private String name;
+	private String username;
 	private String password;
 	public int getId() {
 		return id;
@@ -10,11 +10,11 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -24,6 +24,6 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
 	}
 }
