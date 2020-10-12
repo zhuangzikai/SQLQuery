@@ -4,4 +4,7 @@
 	<select id="getAllUser" resultType="User">
 		select * from tuser
 	</select>
+	<select id="getUserByUsername" resultType="User">
+		select * from tuser where username = #{username}
+	</select>
 </mapper>

@@ -3,16 +3,15 @@ package com.makro.utils;
 public class Result {
 	private int code;
 	private String message;
-	private Object date;
+	private Object result;
 	public Result() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-	public Result(int code, String message, Object date) {
+	public Result(int code, String message, Object result) {
 		super();
 		this.code = code;
 		this.message = message;
-		this.date = date;
+		this.result = result;
 	}
 	public int getCode() {
 		return code;
@@ -26,11 +25,11 @@ public class Result {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public Object getDate() {
-		return date;
+	public Object getResult() {
+		return result;
 	}
-	public void setDate(Object date) {
-		this.date = date;
+	public void setResult(Object result) {
+		this.result = result;
 	}
 	
 }

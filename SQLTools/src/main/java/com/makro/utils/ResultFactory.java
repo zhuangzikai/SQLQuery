@@ -8,7 +8,7 @@ public class ResultFactory {
 		return buildResult(ResultCode.FAIL, "成功", data);
 	}
 	public static Result buildResult(ResultCode resultCode, String message, Object data) {
-		return buildResult(resultCode, "成功", data);
+		return buildResult(resultCode.code, "成功", data);
 	}
 	public static Result buildResult(int resultCode, String message, Object data) {
 		return new Result(resultCode, message, data);
