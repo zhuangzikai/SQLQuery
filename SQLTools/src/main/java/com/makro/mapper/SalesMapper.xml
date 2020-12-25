@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.makro.mapper.SalesMapper">
+	<select id="getSalesDetails" resultType="SalesDetails">
+		select 
+			sh.JFKH as memberCode, sh.billno as invoiceNo, 
+			sh.str4 as onlineOrderNo, sh.str8 as couponOrderNo,
+			sg.BARCODE as barcode, sg.CODE as code, 
+			sg.CATID as catid, sg.NAME as goodsName, 
+			sg.UNIT as unit, sg.JG as price,
+			case when sh.ysyjh is not null then 0-sg.Sl else sg.Sl end as qty,
+			case when sh.ysyjh is not null then 0-HJJE else HJJE end as amount, HJZK as discount,
+			sh.rqsj orderTime,
+			case when sh.ysyjh is not null then &apos;R&apos; else &apos;S&apos; end as orderType,
+			decode(SYJH,'9002','SFA','9003','ECM','POS') as channel
+		from dbusrposnew.salegoods sg ,dbusrposnew.salehead sh
+		where sg.billno =sh.billno 
+			and TRUNC(sh.rqsj) &gt;= date&apos;${startDate}&apos; 
+			and TRUNC(sh.rqsj) &lt;= date&apos;${endDate}&apos; 
+		order by sh.rqsj
+	</select>
+</mapper>

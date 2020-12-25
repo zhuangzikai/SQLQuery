@@ -7,4 +7,22 @@
 	<select id="getUserByUsername" resultType="User">
 		select * from tuser where username = #{username}
 	</select>
+	<select id="getUserList" resultType="User">
+		select * from tuser where 1=1 
+		<choose>
+			<when test="_parameter != '' and _parameter != null">
+				and username like '%${_parameter}%'
+			</when>
+			<otherwise> </otherwise>
+		</choose>
+	</select>
+	<insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="id"> 
+        insert into tuser(username,password) values(#{username},#{password})
+    </insert>
+    <update id="updateUser" parameterType="User">
+        update tuser set username=#{username},password=#{password} where id=#{id}
+    </update>
+    <delete id="deleteUser" parameterType="int">
+        delete from tuser where id=#{id}
+    </delete>
 </mapper>

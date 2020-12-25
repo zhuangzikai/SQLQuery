@@ -22,4 +22,20 @@ public class UserServiceImpl implements UserService{
 	public User getUserByUsername(String username) {
 		return userMapper.getUserByUsername(username);
 	}
+	@Override
+	public List<User> getUserList(String username) {
+		return userMapper.getUserList(username);
+	}
+	@Override
+	public int addUser(User user) {
+		return userMapper.addUser(user);
+	}
+	@Override
+	public int updateUser(User user) {
+		return userMapper.updateUser(user);
+	}
+	@Override
+	public int deleteUser(int id) throws Exception{
+		return userMapper.deleteUser(id);
+	}
 }
