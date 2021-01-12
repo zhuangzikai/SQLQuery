@@ -48,6 +48,20 @@ public class UserController {
 		return ResultFactory.buildSuccessResult("登录成功。");
 	}
 	@CrossOrigin
+	@RequestMapping(value = "/api/validUsername", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
+	@ResponseBody
+	@LogFilter("根据名称查找用户")
+	public Result validUsername(@RequestBody Map<String, String> usernameMap) {
+		String username = usernameMap.get("username");
+		if (username != null) {
+			username = username.trim();
+		}
+		DynamicDataSourceContextHolder.setContextKey(DataSourceConstants.DS_KEY_MASTER);
+		User user = userService.getUserByUsername(username);
+		boolean isExist = user == null? false: true;
+		return ResultFactory.buildSuccessResult(isExist);
+	}
+	@CrossOrigin
 	@RequestMapping(value = "/api/userList", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
 	@ResponseBody
 	@LogFilter("用户列表")
