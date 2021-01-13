@@ -24,7 +24,8 @@ import com.makro.utils.ResultFactory;
 public class UserController {
 	@Autowired
 	private UserService userService;
-
+	
+	@CrossOrigin
 	@RequestMapping("/tuser")
 	@ResponseBody
 	public String getUser() {

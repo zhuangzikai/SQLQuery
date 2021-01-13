@@ -92,6 +92,19 @@
 		    <artifactId>fastjson</artifactId>
 		    <version>1.2.74</version>
 		</dependency>
+		<!-- Dingtalk -->
+		<dependency>
+	        <groupId>com.taobao.top</groupId>
+	        <artifactId>top-api-sdk-dev</artifactId>
+	        <version>ding-open-mc-SNAPSHOT</version>
+	        <scope>system</scope>
+	        <systemPath>C:\Users\Thierry.Zhuang\git\SQLQuery\SQLTools\src\lib\taobao-sdk-java-auto_1479188381469-20210109.jar</systemPath>
+	    </dependency>
+	    <dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.15</version>
+		</dependency>
 	</dependencies>
  
 	<build>
