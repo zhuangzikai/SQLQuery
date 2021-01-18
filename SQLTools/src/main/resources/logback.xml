@@ -13,7 +13,7 @@
         <!-- 配置滚动的策略 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志名称的格式 -->
-            <fileNamePattern>${LOG_HOME}/logback.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>log/logback.log.%d{yyyy-MM-dd}</fileNamePattern>
             <!-- 保存的最长时间：天数 -->
             <MaxHistory>5</MaxHistory>
         </rollingPolicy>

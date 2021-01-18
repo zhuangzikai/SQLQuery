@@ -18,6 +18,7 @@ public class MybatisConfig {
 		sqlSessionFactoryBean.setDataSource(dataSource);
 		// 设置别名包
 		sqlSessionFactoryBean.setTypeAliasesPackage("com.makro.bean");
+		sqlSessionFactoryBean.setVfs(SpringBootVfs.class);
 		return sqlSessionFactoryBean;
 	}
 }

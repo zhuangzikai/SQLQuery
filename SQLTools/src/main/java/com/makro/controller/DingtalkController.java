@@ -88,37 +88,33 @@ public class DingtalkController {
             return resultMap;
         }
     }
-    public static void main(String[] args) throws Exception{
-        // 先删除企业已有的回调
-//        DingTalkClient client = new DefaultDingTalkClient("https://api.makrogo.com/dingtalk/eventreceive");
-//        OapiCallBackDeleteCallBackRequest request = new OapiCallBackDeleteCallBackRequest();
-//        request.setHttpMethod("GET");
-//        client.execute(request, ACCESS_TOKEN);
-//
-//        // 重新为企业注册回调
-//        client = new DefaultDingTalkClient("https://api.makrogo.com/dingtalk/eventreceive");
-//        OapiCallBackRegisterCallBackRequest registerRequest = new OapiCallBackRegisterCallBackRequest();
-//        registerRequest.setUrl("https://api.makrogo.com/dingtalk/eventreceive");
-//        registerRequest.setAesKey(DingTalkConstant.ENCODING_AES_KEY);
-//        registerRequest.setToken("123456");
-//        registerRequest.setCallBackTag(Arrays.asList("bpms_instance_change", "bpms_task_change"));
-//        OapiCallBackRegisterCallBackResponse registerResponse = 
-//        		client.execute(registerRequest,ACCESS_TOKEN);
-//        if (registerResponse.isSuccess()) {
-//            System.out.println("回调注册成功了！！！");
-//        }
-    	
-    	
-    	DingTalkEncryptor dingTalkEncryptor = 
-        		new DingTalkEncryptor(DingTalkConstant.TOKEN, 
-        				DingTalkConstant.ENCODING_AES_KEY, DingTalkConstant.SUITE_KEY);
-    	Map<String,String> map = dingTalkEncryptor.getEncryptedMap("success", Long.valueOf("1610504083202"), "123456");
-    	//map.get("msg_signature"), map.get("timeStamp"), map.get("nonce"), map.get("encrypt")
-    	String msg = dingTalkEncryptor.getDecryptMsg(
-    			"c387a0d104e526953e4f26d657e0e22fd0834f92",
-    			"1610520892768",
-    			"4MJUxa2q",
-    			"96dxII2WVdTPpn8Pq0u+xihhsf/+5mXCAhdN6FI1b+YDbl0ywmImIx7CTqb6jAOo5SoF9Px3pl8DjNFmUjgeUO7wWXasZRtU4Qk5p18cXdn/v2C3U2dwnYpZAwD9aDdu");
-    	System.out.println("msg:  "+msg);
-    }
-}
+	/*
+	 * public static void main(String[] args) throws Exception{ // 先删除企业已有的回调 //
+	 * DingTalkClient client = new
+	 * DefaultDingTalkClient("https://api.makrogo.com/dingtalk/eventreceive"); //
+	 * OapiCallBackDeleteCallBackRequest request = new
+	 * OapiCallBackDeleteCallBackRequest(); // request.setHttpMethod("GET"); //
+	 * client.execute(request, ACCESS_TOKEN); // // // 重新为企业注册回调 // client = new
+	 * DefaultDingTalkClient("https://api.makrogo.com/dingtalk/eventreceive"); //
+	 * OapiCallBackRegisterCallBackRequest registerRequest = new
+	 * OapiCallBackRegisterCallBackRequest(); //
+	 * registerRequest.setUrl("https://api.makrogo.com/dingtalk/eventreceive"); //
+	 * registerRequest.setAesKey(DingTalkConstant.ENCODING_AES_KEY); //
+	 * registerRequest.setToken("123456"); //
+	 * registerRequest.setCallBackTag(Arrays.asList("bpms_instance_change",
+	 * "bpms_task_change")); // OapiCallBackRegisterCallBackResponse
+	 * registerResponse = // client.execute(registerRequest,ACCESS_TOKEN); // if
+	 * (registerResponse.isSuccess()) { // System.out.println("回调注册成功了！！！"); // }
+	 * 
+	 * 
+	 * DingTalkEncryptor dingTalkEncryptor = new
+	 * DingTalkEncryptor(DingTalkConstant.TOKEN, DingTalkConstant.ENCODING_AES_KEY,
+	 * DingTalkConstant.SUITE_KEY); Map<String,String> map =
+	 * dingTalkEncryptor.getEncryptedMap("success", Long.valueOf("1610504083202"),
+	 * "123456"); //map.get("msg_signature"), map.get("timeStamp"),
+	 * map.get("nonce"), map.get("encrypt") String msg =
+	 * dingTalkEncryptor.getDecryptMsg( "c387a0d104e526953e4f26d657e0e22fd0834f92",
+	 * "1610520892768", "4MJUxa2q",
+	 * "96dxII2WVdTPpn8Pq0u+xihhsf/+5mXCAhdN6FI1b+YDbl0ywmImIx7CTqb6jAOo5SoF9Px3pl8DjNFmUjgeUO7wWXasZRtU4Qk5p18cXdn/v2C3U2dwnYpZAwD9aDdu"
+	 * ); System.out.println("msg:  "+msg); }
+	 */}
