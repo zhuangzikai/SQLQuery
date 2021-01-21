@@ -20,7 +20,7 @@ import org.springframework.context.annotation.PropertySource;
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
 @MapperScan(basePackages = "com.makro.mapper")
 @Configuration
-@PropertySource(value = { "classpath:jdbc.properties" })
+@PropertySource(name = "jdbc", value = "classpath:jdbc-${spring.profiles.active}.properties")
 @ComponentScan(basePackages = "com.makro")
 @SpringBootApplication
 public class BootApplication {
