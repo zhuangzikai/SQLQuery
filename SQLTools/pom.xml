@@ -200,6 +200,7 @@
 				<port>8080</port>
                 <env>dev</env>
              </properties>
+             <!-- 本地调试时暂时通过这个标志位切环境 -->
              <activation>
                  <activeByDefault>true</activeByDefault>
              </activation>

@@ -28,6 +28,7 @@ public class UserController {
 	@CrossOrigin
 	@RequestMapping("/tuser")
 	@ResponseBody
+	@LogFilter("测试数据库连接")
 	public String getUser() {
 		DynamicDataSourceContextHolder.setContextKey(DataSourceConstants.DS_KEY_MASTER);
 		List<User> users = userService.getAllUser();
