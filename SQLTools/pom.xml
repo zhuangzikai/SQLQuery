@@ -13,7 +13,7 @@
   <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.1.17.RELEASE</version>
 	</parent>
  
 	<dependencies>
@@ -116,6 +116,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- 打瘦包，执行命令 java -Dloader.path=路径\lib\  -jar SQLTools.jar -->
+				<configuration>
+                    <layout>ZIP</layout>
+                    <includes>
+                        <include>
+                        	<groupId>com.makro</groupId>
+  							<artifactId>SQLTools</artifactId>
+                        </include>
+                     </includes>
+               	</configuration>
+               	
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -199,6 +210,13 @@
 			<properties>
 				<port>8080</port>
                 <env>dev</env>
+                <efurl>https://wkluat.makrochina.com.cn</efurl>
+                <CorpId>ding9b21ed5173c6f331f5bf40eda33b7ba0</CorpId>
+                <AppKey>dinglw8zlcxsq63gushh</AppKey>
+                <AppSecret>KCI9jbgm8gX0EGrIKYRROsjxcN0Z2Stnfze49vCf_qD99Q4OrHEwGTGVvOfJqGbc</AppSecret>
+                <ContractPriceId>PROC-E01F2546-79A3-4C47-ADA4-3936B01CA3A0</ContractPriceId>
+                <CreditId>PROC-80ADFE6C-0329-4E7E-B11E-0BE8024D1ADF</CreditId>
+                <MKActiveId>PROC-E5C600DE-82D2-46A1-8350-FBD4FB1CB89F</MKActiveId>
              </properties>
              <!-- 本地调试时暂时通过这个标志位切环境 -->
              <activation>
@@ -208,8 +226,15 @@
 	    <profile>
 	        <id>uat</id>
 			<properties>
-				<port>18080</port>
+				<port>28080</port>
                 <env>uat</env>
+                <efurl>https://wkluat.makrochina.com.cn</efurl>
+                <CorpId>ding9b21ed5173c6f331f5bf40eda33b7ba0</CorpId>
+                <AppKey>dinglw8zlcxsq63gushh</AppKey>
+                <AppSecret>KCI9jbgm8gX0EGrIKYRROsjxcN0Z2Stnfze49vCf_qD99Q4OrHEwGTGVvOfJqGbc</AppSecret>
+                <ContractPriceId>PROC-E01F2546-79A3-4C47-ADA4-3936B01CA3A0</ContractPriceId>
+                <CreditId>PROC-80ADFE6C-0329-4E7E-B11E-0BE8024D1ADF</CreditId>
+                <MKActiveId>PROC-E5C600DE-82D2-46A1-8350-FBD4FB1CB89F</MKActiveId>
              </properties>
 	    </profile>
 	    <profile>
@@ -217,6 +242,13 @@
 			<properties>
 				<port>28080</port>
                 <env>prod</env>
+                <efurl>https://wklprd.makrochina.com.cn</efurl>
+                <CorpId>dingcd6d2d8243eddf7035c2f4657eb6378f</CorpId>
+                <AppKey>dingrfzvajjyvzamaok9</AppKey>
+                <AppSecret>viufQLIVCVQITGopwnYso8CdiTSneSMBByJBXv1fiW5awTfa6-c_e_oxC-sfmqfm</AppSecret>
+                <ContractPriceId>PROC-93362503-6C36-41EF-BF43-A1C4152C9E45</ContractPriceId>
+                <CreditId>PROC-5A85FBE0-A5EA-44CE-9B2D-6F7F088A8617</CreditId>
+                <MKActiveId>PROC-1844AB2D-FBD2-4737-AECC-889C6F22086F</MKActiveId>
              </properties>
 	    </profile>
 	</profiles>

@@ -9,4 +9,8 @@ public class DataSourceConstants {
      * POS数据源
      */
     public static final String DS_KEY_POS = "POS";
+    /**
+     * OA数据源
+     */
+    public static final String DS_KEY_OA = "OA";
 }

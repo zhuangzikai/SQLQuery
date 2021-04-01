@@ -75,7 +75,7 @@ public class LogAspect {
         LOGGER.info("请求方法:"+method.getName());
         // 获取方法上LogFilter注解
         LogFilter logFilter = method.getAnnotation(LogFilter.class);
-        String value = logFilter.value() ;
+        String value = logFilter.value();
         LOGGER.info("模块描述:"+value);
         Object[] args = point.getArgs();
         LOGGER.info("请求参数:"+ JSONObject.toJSONString(args));

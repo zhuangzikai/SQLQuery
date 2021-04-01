@@ -54,12 +54,19 @@ public class BootApplication {
         return DataSourceBuilder.create().build();
     }
     
+    @Bean(DataSourceConstants.DS_KEY_OA)
+    @ConfigurationProperties(prefix = "sqltools.oa")
+    public DataSource oaDataSource() {
+        return DataSourceBuilder.create().build();
+    }
+    
     @Bean
     @Primary
     public DataSource dynamicDataSource() {
         Map<Object, Object> dataSourceMap = new HashMap<>(2);
         dataSourceMap.put(DataSourceConstants.DS_KEY_MASTER, masterDataSource());
         dataSourceMap.put(DataSourceConstants.DS_KEY_POS, slaveDataSource());
+        dataSourceMap.put(DataSourceConstants.DS_KEY_OA, oaDataSource());
         //设置动态数据源
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         dynamicDataSource.setTargetDataSources(dataSourceMap);
