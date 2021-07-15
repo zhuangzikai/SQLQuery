@@ -58,6 +58,12 @@ public class DingtalkController {
     
     @Value("${CreditId}")
     private String CRD_PROCODE;
+    
+    @Value("${SettlementId}")
+    private String Settlement_PROCODE;
+    
+    //TODO MKActiveId?
+    
     /**
      * 回调接口，应用里所有的回调都会经过这里，不仅仅包含流程。
      * 流程里分任务和实例，每个审批环节提交都有任务状态变更，审批开始结束会有实例状态变更。
@@ -168,6 +174,17 @@ public class DingtalkController {
                             	 } else {
                             		 logger.warn("ProcessInstanceId: " + processInstanceId + "   其他异常状态： " + type);
                             	 }
+                             } else if (Settlement_PROCODE.equalsIgnoreCase(processCode)) {
+                            	 // SFA结算周期审批
+                            	 // 2、获取staffid
+                            	 // 3、获取员工工号, 若不存在则插入staffid
+                            	 // 4、操作时间
+                            	 // 5、反查钉钉流程字段：会员号，会员名称、申请理由、周期
+                            	 // 6、校验会员member_table，如不存在仍然插入，只是备注改为【会员不存在】
+                            	 // 7、若存在settlte_member，则update，如不存在，则insert
+                            	 
+                            	 
+                            	 
                              } else if (CRD_PROCODE.equalsIgnoreCase(processCode)) {
                             	 // TODO 授信审批
                              }

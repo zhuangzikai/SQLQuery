@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.makro.mapper.DingTalkProcessMapper">
+	<select id="getBusIdByInstanceId" resultType="com.makro.bean.DingTalkProcess">
+		select 
+			 dt_processInstanceId as processInstanceId, ef_no as busId, 'CP' as busType, dt_title as dtTitle 
+		from contract_price_list 
+		where dt_processInstanceId = #{processInstanceId}
+	</select>
+	<update id="updateDingTalkProcess">
+        update contract_price_list set bas_isValid=#{isValid} where dt_processInstanceId = #{processInstanceId}
+    </update>
+</mapper>

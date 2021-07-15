@@ -217,6 +217,7 @@
                 <ContractPriceId>PROC-E01F2546-79A3-4C47-ADA4-3936B01CA3A0</ContractPriceId>
                 <CreditId>PROC-80ADFE6C-0329-4E7E-B11E-0BE8024D1ADF</CreditId>
                 <MKActiveId>PROC-E5C600DE-82D2-46A1-8350-FBD4FB1CB89F</MKActiveId>
+                <SettlementId>PROC-CBE068C8-E4A9-4072-B222-B9FE1ECAB661</SettlementId>
              </properties>
              <!-- 本地调试时暂时通过这个标志位切环境 -->
              <activation>
@@ -235,6 +236,7 @@
                 <ContractPriceId>PROC-E01F2546-79A3-4C47-ADA4-3936B01CA3A0</ContractPriceId>
                 <CreditId>PROC-80ADFE6C-0329-4E7E-B11E-0BE8024D1ADF</CreditId>
                 <MKActiveId>PROC-E5C600DE-82D2-46A1-8350-FBD4FB1CB89F</MKActiveId>
+                <SettlementId>PROC-CBE068C8-E4A9-4072-B222-B9FE1ECAB661</SettlementId>
              </properties>
 	    </profile>
 	    <profile>
@@ -249,6 +251,7 @@
                 <ContractPriceId>PROC-93362503-6C36-41EF-BF43-A1C4152C9E45</ContractPriceId>
                 <CreditId>PROC-5A85FBE0-A5EA-44CE-9B2D-6F7F088A8617</CreditId>
                 <MKActiveId>PROC-1844AB2D-FBD2-4737-AECC-889C6F22086F</MKActiveId>
+                <SettlementId>PROC-8F5C5F86-3A9C-434D-B682-BC48F0989312</SettlementId>
              </properties>
 	    </profile>
 	</profiles>
