@@ -82,9 +82,10 @@ public class DingtalkController {
         @RequestBody(required = false) JSONObject  body
     ) {
         try {
+			// 注意！！钉钉后台事件注册订阅需要用Appkey，但是审批事件需要用corpId
             DingTalkEncryptor dingTalkEncryptor = 
             		new DingTalkEncryptor(DingTalkConstant.TOKEN, 
-            				DingTalkConstant.ENCODING_AES_KEY, corpId);
+            				DingTalkConstant.ENCODING_AES_KEY, appKey);
             // 从post请求的body中获取回调信息的加密数据进行解密处理
             if (body != null) {
             	String encrypt = body.getString("encrypt");
@@ -93,7 +94,7 @@ public class DingtalkController {
             		 try {
             			 plainText = dingTalkEncryptor.getDecryptMsg(signature, timestamp.toString(), nonce, encrypt);
 					} catch (com.makro.utils.DingTalkEncryptor.DingTalkEncryptException e) {
-						logger.error("CorpId：", corpId + "\n");
+						logger.error("CorpId：" + corpId + "\n");
 						logger.error("解密报错：", e);
 					}
             		 JSONObject callBackContent = JSON.parseObject(plainText);
@@ -189,7 +190,7 @@ public class DingtalkController {
                             	 // TODO 授信审批
                              }
                          } else if ("check_url".equals(eventType)) {
-                             logger.info("Check_url成功！！！ CorpId: " + corpId);
+                             logger.info("Check_url成功！！！ CorpId: " + appKey);
                          } 
             		 } else {
             			 logger.warn("解密失败，plainText cannot be json: signature: "+signature+", timestamp: "+timestamp+", nonce: "+nonce+", encrypt: "+encrypt);
